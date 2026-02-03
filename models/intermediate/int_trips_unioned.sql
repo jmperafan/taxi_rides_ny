@@ -37,13 +37,13 @@ yellow_trips as (
         store_and_fwd_flag,
         passenger_count,
         trip_distance,
-        1 as trip_type,  -- Yellow taxis only do street-hail (code 1)
+        cast(1 as integer) as trip_type,  -- Yellow taxis only do street-hail (code 1)
         fare_amount,
         extra,
         mta_tax,
         tip_amount,
         tolls_amount,
-        0 as ehail_fee,  -- Yellow taxis don't have ehail_fee
+        cast(0 as numeric) as ehail_fee,  -- Yellow taxis don't have ehail_fee
         improvement_surcharge,
         total_amount,
         payment_type,
